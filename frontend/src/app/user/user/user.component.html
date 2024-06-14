@@ -1,0 +1,16 @@
+<div>
+    <div class="m-auto col-12 xl:col-8 flex justify-content-between align-items-center">
+      <img [routerLink]="['/']" style="width: 64px;" src="https://logo.com/image-cdn/images/kts928pd/production/28563b4f836c667b30238865f796aeb03ae702db-358x357.png?w=512&q=72&fm=webp" alt="">
+      <div *ngIf="currentUsername"
+        class="flex align-items-center gap-2">
+        <p [routerLink]="['./staff']">{{currentUsername}}</p>
+        <p-button (click)="logout()" label="Logout"></p-button>
+      </div>
+      <div *ngIf="!currentUsername">
+        <p-button [routerLink]="['./login']" label="Login"></p-button>
+      </div>
+    </div>
+    <hr>
+  </div>
+  
+  <router-outlet></router-outlet>
